@@ -7,9 +7,8 @@ var app = express();
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.post("/api/doStuff", function (req, res) {
-    // do stuff
-    res.send("request completed");
+app.get("/api/postTest", function (req, res) {
+    res.status(200).send({ test: process.env.TEST });
 });
 
 app.get('/validateToken/:token', (req, res) => {
